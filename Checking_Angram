@@ -11,3 +11,30 @@ public:
         return s == t; // Compare sorted versions
     }
 };
+
+Question2:
+
+#include <bits/stdc++.h>
+using namespace std;
+
+bool checkinganagram(string s, string s1) {
+    if (s.length() != s1.length()) {
+        return false; // If lengths are different, they can't be anagrams
+    }
+    sort(s.begin(), s.end());
+    sort(s1.begin(), s1.end());
+    return s == s1; // Return true if sorted strings match
+}
+
+int main() {
+    string s = "cat";
+    string s1 = "hi";
+
+    if (checkinganagram(s, s1)) { // Function should be called with parameters
+        cout << "true";
+    } else {
+        cout << "false";
+    }
+
+    return 0;
+}
