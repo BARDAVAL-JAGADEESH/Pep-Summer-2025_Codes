@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+// Function to check if a number is prime
+bool isPrime(int n) {
+    if (n < 2) return false;
+    for (int i = 2; i * i <= n; i++)
+        if (n % i == 0) return false;
+    return true;
+}
+
+int main() {
+    int n, count = 0;
+    cin >> n;  // Take input from the user
+
+    int num = n + 1; // Start checking from the next number
+
+    while (count < 5) {
+        if (isPrime(num) && isPrime(num + 2)) { // Check twin primes
+            cout << "(" << num << ", " << num + 2 << ") ";
+            count++;
+        }
+        num++;
+    }
+
+    return 0;
+}
