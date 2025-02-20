@@ -1,0 +1,13 @@
+#include <algorithm> // For sort function
+
+class Solution {
+public:
+    bool isAnagram(string s, string t) {
+        if (s.length() != t.length()) return false; // Different lengths → Not an anagram
+
+        sort(s.begin(), s.end()); // Sort both strings
+        sort(t.begin(), t.end());
+
+        return s == t; // Compare sorted versions
+    }
+};
