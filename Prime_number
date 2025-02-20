@@ -28,3 +28,37 @@ int main() {
 
     return 0;
 }
+
+
+(or)
+#include <iostream>
+using namespace std;
+
+// Function to check if a number is prime (Brute Force)
+bool isPrime(int num) {
+    if (num < 2) return false;
+    for (int i = 2; i < num; i++) { // Check divisibility from 2 to num-1
+        if (num % i == 0)
+            return false;
+    }
+    return true;
+}
+
+int main() {
+    int n, count = 0;
+    cout << "Enter an integer: ";
+    cin >> n;
+
+    int num = n + 1; // Start checking from the next number
+
+    while (count < 5) {  // Run until we find 5 prime numbers
+        if (isPrime(num)) { // Check if num is prime
+            cout << num << " "; // Print the prime number
+            count++;  // Increase the count of primes found
+        }
+        num++;  // Move to the next number
+    }
+
+    return 0;
+}
+
