@@ -1,0 +1,16 @@
+#include<iostream>
+using namespace std;
+int maxele(int arr[],int n){
+int maxi=arr[0];
+for(int i=1;i<n;i++){
+if(maxi>arr[i]){
+maxi=arr[i];
+return maxi;
+}
+}
+}
+int main(){
+int arr[5]={1,2,3,4,5};
+cout<<maxele(arr,5);
+return 0;
+}
