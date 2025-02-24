@@ -1,0 +1,33 @@
+#include <iostream>
+#include <vector>
+#include <climits>
+
+using namespace std;
+
+int* getMinMax(vector<int> arr) {
+    static int result[2];  // Create a static array to hold min and max values
+    
+    int min = INT_MAX;
+    int max = INT_MIN;
+    
+    for(int i = 0; i < arr.size(); i++) {
+        if(arr[i] < min) {
+            min = arr[i];  // update min if current value is smaller
+        }
+        if(arr[i] > max) {
+            max = arr[i];  // update max if current value is larger
+        }
+    }
+    
+    result[0] = min;  // Store min in the first position
+    result[1] = max;  // Store max in the second position
+    
+    return result;  // Return the array
+}
+
+int main() {
+    vector<int> arr = {1, 2, 3, -1, 5, 6, -10};
+    int* result = getMinMax(arr);
+    cout << "Min: " << result[0] << ", Max: " << result[1] << endl;
+    return 0;
+}
