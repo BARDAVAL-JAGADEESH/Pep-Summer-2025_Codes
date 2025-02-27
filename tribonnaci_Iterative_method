@@ -1,0 +1,28 @@
+#include<iostream>
+using namespace std;
+int tribonacci(int n){
+	int sum=0;
+	int first=0;
+	int second=0;
+	int third=1;
+	if(n==0){
+		return 0;
+	}
+	if(n<3){
+		return 1;
+	}
+	for(int i=3;i<n;i++){
+		sum=first+second+third;
+		first=second;
+		second=third;
+		third=sum;
+		
+	}
+	return sum;
+	
+}
+int main(){
+int n=10;
+cout<<tribonacci(n);
+	
+}
