@@ -1,0 +1,29 @@
+#include<iostream>
+using namespace std;
+int sqrt(int n) {
+    if (n == 0) {
+        return 0;
+    }
+    int start = 1, end = n;
+    int mid;
+    while (start <= end) {
+        mid = start + (end - start) / 2;
+        if (mid == n / mid) {
+            return mid;
+        }
+        else if (mid > n / mid) {
+            end = mid - 1;
+    }
+        else {
+            start = mid + 1;
+        }
+    }
+    
+    return end; 
+}
+
+int main() {
+    int n = 15;
+    cout << sqrt(n); 
+    return 0;
+}
