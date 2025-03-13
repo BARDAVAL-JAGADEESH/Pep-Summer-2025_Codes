@@ -1,0 +1,29 @@
+#include<bits/stdc++.h>
+using namespace std;
+bool roatecheck(string s1,string goal){
+	int n=s1.length();
+	int m=goal.length();
+	if(n!=m){
+		return false;
+	}
+	for(int i=0;i<n;i++){   // Rotate the string to the left by one character
+		rotate(s1.begin(),s1.begin()+1,s1.end());
+		if(s1==goal){   // Check if the current rotation matches the goal
+			return true;
+		}
+	}
+	return false;
+}
+
+
+int main(){
+	string s1="abcde";
+	string goal="cdeab";
+	if(roatecheck(s1,goal)){
+		cout<<"true";
+	}
+	else{
+		cout<<"false";
+	}
+	
+}
