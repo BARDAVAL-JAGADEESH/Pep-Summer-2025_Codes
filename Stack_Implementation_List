@@ -1,0 +1,40 @@
+
+import java.util.*;
+public class Main
+{
+    public class stack{
+        List<Integer>ls;
+        stack(){
+            List=new List<>();
+            
+        }
+        public void push(int element ){
+            
+            ls.add(element);
+        }
+            
+            public int peek(){
+                if(ls.size()==0)
+                    return -1;
+                
+                return list.get(ls.size()-1);//it point last index 1 2 3 4  remove 4  
+                    
+            }
+            public int pop(){
+                if(ls.size()==0)
+                return -1;
+                return list.remove(ls.size()-1);
+                return element;
+            }
+        }
+    
+	public static void main(String[] args) {
+	   Stack s=new Stack();
+	   s.push(1);
+	   s.push(3);
+	   s.psuh(4);
+	   System.Out.System.out.println(s.peek());
+	   System.Out.System.out.println(s.peek());
+	   System.Out.System.out.println(s.peek());
+	}
+}
