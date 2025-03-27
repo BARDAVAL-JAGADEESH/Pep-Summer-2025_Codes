@@ -1,0 +1,90 @@
+public class Main
+
+static class Stack{
+  ArrayList<Integer>ls;
+  Stack(){
+      ls=new ArrayList<>();
+      
+  }
+  void push(int element){
+      ls.add(element);
+      
+  }
+  int peek(){
+      if(ls.size()==0){
+      return -1;
+      
+      }
+      return ls.get(lis.size()-1);
+  }
+  int pop(){
+      if(ls.size()==0){
+          return -1;
+      }
+      int element=this.peek();
+      ls.remove(ls.size()-1);
+      return element;
+      
+  }
+  int getSize(){
+      return ls.size();
+      
+  }
+  boolean isEmpty(){
+      return ls.size()==0;
+      
+  }
+}
+class Queue{
+    ArrayList<Integer>ls;
+    Queue(){
+        ls=new ArrayList<>();
+        
+    }
+    void enqueue(int element){
+        ls.add(element);
+        
+    }
+    int peek(){
+        if(ls.size()==0)
+        return -1;
+        return ls.get(0);
+        
+    }
+    int dequeue(){
+        if(ls.size()==0)
+        return -1;
+        int element=ls.get(0);
+        ls.remove(0);
+        
+    }
+    int getsize(){
+         return ls.size();
+    }
+    boolean isEmpty(){
+        return ls.size()==0;
+        
+    }
+    
+}
+
+	public static void main(String[] args) {
+	    Stack s=new Stack();
+	    s.push(4);
+	    s.push(12);
+	    s.push(23);
+	    s.push(24);
+		System.out.println(s.peek());
+		System.out.println(s.pop());
+		System.out.println(s.pop());
+		
+		Queue q=new Queue();
+		q.enqueue(1);
+		q.enqueue(3);
+		q.enqueue(5);
+		System.out.println(q.peek());
+		System.out.println(q.dequeue());
+		System.out.println(q.dequeue.pop());
+		
+	}
+}
