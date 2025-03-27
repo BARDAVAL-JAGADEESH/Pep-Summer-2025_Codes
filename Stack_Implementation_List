@@ -1,40 +1,50 @@
-
-import java.util.*;
 public class Main
-{
-    public class stack{
-        List<Integer>ls;
-        stack(){
-            List=new List<>();
-            
-        }
-        public void push(int element ){
-            
-            ls.add(element);
-        }
-            
-            public int peek(){
-                if(ls.size()==0)
-                    return -1;
-                
-                return list.get(ls.size()-1);//it point last index 1 2 3 4  remove 4  
-                    
-            }
-            public int pop(){
-                if(ls.size()==0)
-                return -1;
-                return list.remove(ls.size()-1);
-                return element;
-            }
-        }
-    
+
+static class Stack{
+  ArrayList<Integer>ls;
+  Stack(){
+      ls=new ArrayList<>();
+      
+  }
+  void push(int element){
+      ls.add(element);
+      
+  }
+  int peek(){
+      if(ls.size()==0){
+      return -1;
+      
+      }
+      return ls.get(lis.size()-1);
+  }
+  int pop(){
+      if(ls.size()==0){
+          return -1;
+      }
+      int element=this.peek();
+      ls.remove(ls.size()-1);
+      return element;
+      
+  }
+  int getSize(){
+      return ls.size();
+      
+  }
+  boolean isEmpty(){
+      return ls.size()==0;
+      
+  }
+}
+
 	public static void main(String[] args) {
-	   Stack s=new Stack();
-	   s.push(1);
-	   s.push(3);
-	   s.psuh(4);
-	   System.Out.System.out.println(s.peek());
-	   System.Out.System.out.println(s.peek());
-	   System.Out.System.out.println(s.peek());
+	    Stack s=new Stack();
+	    s.push(4);
+	    s.push(12);
+	    s.push(23);
+	    s.push(24);
+		System.out.println(s.peek());
+		System.out.println(s.pop());
+		System.out.println(s.pop());
+		
 	}
 }
