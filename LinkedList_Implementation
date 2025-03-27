@@ -1,0 +1,64 @@
+public class Main
+
+static class Node{
+    int val;
+    Node next;
+    Node(int val, Node next){
+        this.val=val;
+        this.next=next;
+    }
+}
+
+static class SingleLinkedList{
+    Node head;
+    Node tail;
+    int size;
+     SingleLinkedList(){
+         head=null;
+         tail=null;
+         size=0;
+     }
+     void addAtLast(int element){
+         if(size==0){  //if lis is empty we will add into the list
+             Node newNode=new Node(element);
+             head=newNode;
+             tail=newNode;
+             size++;
+         }
+         else{ // if list is not empty element already prsent 
+         Node newNode=new Node(element);
+         tail.next=newNode;
+         tail=newNode;
+         size++;
+             
+         }
+     }
+     void addAtfront(int element){
+         Node newNode=new Node(element);// we will create a new node 
+         if(size==0){ // if the size is zero (list is empty)
+              head=newNode;//point at newNode
+             tail=newNode;//tail also point in same node
+             size++;// we will increase the size
+         }
+         else{
+             newNode.next=head;// if the element is already present 
+             head=newNode;
+             size++
+             
+         }
+     }
+     void addAtIndex(int element,int index){ //element and index where to add
+         Node newNode=new Node(element,index);
+         if(size==0 &&index>0){ //if list is empty and index not outof bound             head=newNode;
+             tail=newNode;
+             size++;
+             
+         }
+         else{
+             
+             
+             
+         }
+         
+     }
+}
