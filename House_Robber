@@ -1,0 +1,20 @@
+class Solution {
+    public int helper(int[]house,int currenthouse,int[] memo){
+        if(currenthouse>=house.length)
+        return 0;
+        if(memo[currenthouse]!=-1)
+        return memo[currenthouse];
+        int currenthouseloot=house[currenthouse]+helper(house,currenthouse+2,memo);
+        int notloot=helper(house,currenthouse+1,memo);
+        memo[currenthouse]=Math.max(currenthouseloot,notloot);
+        return memo[currenthouse];
+    }
+    public int rob(int[] nums) {
+        int [] memo=new int[nums.length];
+        for(int i=0;i<nums.length;i++){
+            memo[i]=-1;
+        }
+        
+        return helper(nums,0,memo);
+    }
+}
