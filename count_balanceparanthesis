@@ -1,0 +1,31 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int countBalancedPairs(const string& s) {
+    stack<char> st;
+    int count = 0;
+
+    for (char ch : s) {
+        if (ch == '(' || ch == '{' || ch == '[') {
+            st.push(ch);
+        } 
+        else {
+            if (!st.empty() &&
+                ((st.top() == '(' && ch == ')') ||
+                  (st.top() == '{' && ch == '}') ||
+                  (st.top() == '[' && ch == ']'))) {
+                st.pop();
+                count++; // matched pair found
+            }
+        }
+    }
+
+    return count;
+}
+
+int main() {
+    string s = "{([])}";
+    int pairs = countBalancedPairs(s);
+    cout << "Number of balanced pairs: " << pairs << "\n";
+    return 0;
+}
